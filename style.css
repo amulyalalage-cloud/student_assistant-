@@ -66,3 +66,26 @@ li {
   margin-top: 5px;
   border: 1px solid #ddd;
 }
+body.dark-mode {
+  background: #121212;
+  color: #ffffff;
+}
+
+body.dark-mode header {
+  background: #1f1f1f;
+}
+
+body.dark-mode nav {
+  background: #000000;
+}
+
+body.dark-mode .section {
+  background: #1e1e1e;
+  color: #ffffff;
+}
+
+body.dark-mode button {
+  background: #333;
+  color: white;
+  border: 1px solid #555;
+}

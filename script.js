@@ -77,3 +77,22 @@ function addAnnouncement() {
   list.appendChild(li);
   input.value = "";
 }
+function toggleDarkMode() {
+  document.body.classList.toggle("dark-mode");
+
+  // Save preference
+  if (document.body.classList.contains("dark-mode")) {
+    localStorage.setItem("theme", "dark");
+  } else {
+    localStorage.setItem("theme", "light");
+  }
+}
+
+// Load saved theme when page opens
+window.onload = function () {
+  let theme = localStorage.getItem("theme");
+
+  if (theme === "dark") {
+    document.body.classList.add("dark-mode");
+  }
+};
