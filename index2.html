@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Assistant</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>🎓 Student Assistant Platform</h1>
+</header>
+
+<nav>
+  <button onclick="showSection('chat')">AI Chat</button>
+  <button onclick="showSection('notes')">Notes</button>
+  <button onclick="showSection('tasks')">Tasks</button>
+  <button onclick="showSection('announcements')">Announcements</button>
+</nav>
+
+<!-- AI Chat -->
+<section id="chat" class="section">
+  <h2>AI Chatbot</h2>
+  <div id="chatBox"></div>
+  <input type="text" id="chatInput" placeholder="Ask something...">
+  <button onclick="sendMessage()">Send</button>
+</section>
+
+<!-- Notes -->
+<section id="notes" class="section">
+  <h2>Notes</h2>
+  <textarea id="noteInput" placeholder="Write your notes..."></textarea>
+  <button onclick="saveNote()">Save Note</button>
+  <div id="notesList"></div>
+</section>
+
+<!-- Tasks -->
+<section id="tasks" class="section">
+  <h2>Task Manager</h2>
+  <input type="text" id="taskInput" placeholder="Enter task">
+  <button onclick="addTask()">Add Task</button>
+  <ul id="taskList"></ul>
+</section>
+
+<!-- Announcements -->
+<section id="announcements" class="section">
+  <h2>Announcements</h2>
+  <input type="text" id="announcementInput" placeholder="Add announcement">
+  <button onclick="addAnnouncement()">Add</button>
+  <ul id="announcementList"></ul>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
