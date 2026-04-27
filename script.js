@@ -1,3 +1,14 @@
+const firebaseConfig = {
+  apiKey: "AIzaSyBHzWehgyyqTd-P6GCUwKmlPzChmgcT2FE",
+  authDomain: "studentassistant-a8ff8.firebaseapp.com",
+  projectId: "studentassistant-a8ff8",
+  storageBucket: "studentassistant-a8ff8.appspot.com",
+  messagingSenderId: "708939501996",
+  appId: "1:708939501996:web:23adec3e1ec5f919152a09"
+};
+
+firebase.initializeApp(firebaseConfig);
+const auth = firebase.auth();
 // Show section
 function showSection(id) {
   document.querySelectorAll('.section').forEach(sec => {
@@ -96,3 +107,40 @@ window.onload = function () {
     document.body.classList.add("dark-mode");
   }
 };
+
+// SIGN UP
+function signup() {
+  let email = document.getElementById("email").value;
+  let password = document.getElementById("password").value;
+
+  auth.createUserWithEmailAndPassword(email, password)
+    .then(() => {
+      alert("Signup successful!");
+      document.getElementById("loginBox").style.display = "none";
+      document.getElementById("app").style.display = "block";
+    })
+    .catch(err => alert(err.message));
+}
+
+// LOGIN
+function login() {
+  let email = document.getElementById("email").value;
+  let password = document.getElementById("password").value;
+
+  auth.signInWithEmailAndPassword(email, password)
+    .then(() => {
+      alert("Login successful!");
+      document.getElementById("loginBox").style.display = "none";
+      document.getElementById("app").style.display = "block";
+    })
+    .catch(err => alert(err.message));
+}
+auth.onAuthStateChanged(user => {
+  if (user) {
+    document.getElementById("loginBox").style.display = "none";
+    document.getElementById("app").style.display = "block";
+  } else {
+    document.getElementById("loginBox").style.display = "block";
+    document.getElementById("app").style.display = "none";
+  }
+});

@@ -1,4 +1,7 @@
-body {
+
+#app {
+  display: none;
+}body {
   font-family: Arial, sans-serif;
   margin: 0;
   background: #f4f6f9;
